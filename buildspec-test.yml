@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+  pre_build:
+    commands:
+      - echo Preparing test environment...
+      - ls -la target/
+  build:
+    commands:
+      - echo Running tests with test profile...
+      - mvn test -Dspring.profiles.active=test
+  post_build:
+    commands:
+      - echo Tests completed on `date`

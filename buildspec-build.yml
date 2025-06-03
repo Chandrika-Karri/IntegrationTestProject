@@ -7,8 +7,7 @@ phases:
   build:
     commands:
       - echo Build completed on `date`
-      - mvn test -Dspring.profiles.active=test
-      - mvn package -Dmaven.test.skip=true
+      - mvn package -Dmaven.test.skip
   post_build:
     commands:
       - echo Build completed on `data`
@@ -16,3 +15,5 @@ artifacts:
   files:
     - target/*.jar
   discard-paths: yes
+
+
